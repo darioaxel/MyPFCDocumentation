@@ -1,0 +1,152 @@
+\chapter{Resultados}
+\label{chap:Resultados}
+En este capítulo se presentan los resultados de las iteraciones descritas en la sección anterior.
+\section{Iteración 0: Planificación de las iteraciones}
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=1.1\textwidth]{/ProjectMainDiagram.png}
+\caption{Base arquitectural del sistema}
+\label{fig:base-architecture}
+\end{center}
+\end{figure}
+\section{Iteracción 1: Desarrollo de la gramática ANTLRv4 de PowerBuilder}
+
+En la primera iteración del proceso de desarrollo se cumplimentaran todas las fases de un ciclo de la metodología, además de 
+incorporar varios ciclos de desarrollo basado en TDD. El objetivo principal de esta iteración tal y como se definió en 
+la fase 0 del proyecto será: \emph{Generar una gramática que permita procesar el lenguaje Powerscript}.
+
+\subsection{Planificación y requerimientos}
+
+Para abordar esta parte de la iteración, inicialmente se realiza una busqueda de gramáticas que pudiesen servir de base 
+en la creación de la que se plantea como objetivo. Después de investigar acerca de las gramáticas ANTLRv4 y tras descartar
+las que se puediera encontrar una propia del lenguaje de programación a estudio en el repositorio github del proyecto\cite{}
+se pasa a realizar un análisis pormenorizado de una colección de ficheros de código extraidos del sofware heredado. 
+Como apoyo se utilizará tanto la guía de referencia del lenguaje \cite{PowerBuilder} como las estructuras de otras gramáticas del proyecto
+ANTLRv4 que puedan servir de orientación.
+
+\subsection{Análisis y diseño}
+
+Una vez analizados numerosos ficheros de código fuente se establecen dos conjuntos de artefactos a tratar:
+
+\begin{itemize}
+ \item Estructuras comunes con otros lenguajes de programación conocidos.
+ \item Estructuras propias de Powerscript.
+\end{itemize}
+
+A continuación se abordan ambos grupos de artefactos y en base a ellos se identifican los test mínimos que una vez resueltos
+en fases siguientes de la iteracción permitan alcanzar el objetivo propuesto.
+
+\subsubsection{Estructuras comunes} \label{subsec:EstructurasComunes}
+
+Se analizarán ahora todas aquellas estructuras que se puedan relacionar con las mas comunes de otros lenguajes de programación conocidos.
+
+\paragraph{Palabras reservadas del lenguaje, tipos de datos y comentarios}
+Tanto las palabras reservadas como los tipos de datos, pueden encontrarse facilmente en los primeros capítulos de la guía de desarrollo \cite{PowerBuilder}.
+Además los comentarios no difieren de los que se utilizan en los lenguajes de programación mas usuales. Por tanto, es sencillo establecer un primer test
+que además nos servirá para comprobar el entorno de desarrollo establecido en la iteracción anterior. 
+
+El primer test, denominado «TestComments.txt» se crea y adjunta al proyecto en la carpeta: \verb|\resources\basics|
+
+\paragraph{Declaración de variables y constantes}
+La forma en la que se declaran las variables y las constantes, salvo por los tipos propios del lenguaje, también es idéntica a la que se utiliza en otros 
+lenguajes de programación. 
+
+En este punto se ha de resaltar una característica propia del lenguaje a tener en cuenta y que va a condicionar todo el desarrollo de la gramática: 
+
+\textbf{No existen identificadores terminales de las sentencias del lenguaje Powerscript}.
+
+\begin{listing}[
+  float=ht,
+  language = Powerscript,
+  caption  = {Definición de variables},
+  label    = code:variables]
+type variables
+boolean ib_Painting
+integer width = 251, height = 72
+fontcharset fontcharset = ansi
+end variables
+\end{listing}
+
+Como se puede comprobar en el listado \ref{code:variables}, la única forma de discernir cuándo termina una sentencia y comienza otra es mediante el objeto 
+\verb|\n| que marca el fin de la línea de texto. 
+
+Para validar esta parte de la gramática se establecen una serie de test que se adjuntan a la carpeta: \verb|\resources\literals| y \verb|\resources\members\constants|
+
+\paragraph{Bucles}
+
+Dentro de Powerscript encontramos los siguientes bucles de flujo:
+\begin{itemize}
+ \item IF-THEN-ELSEIF-THEN 
+ \item FOR 
+ \item DO-WHILE
+ \item TRY-CATCH
+ \item CHOOSE
+\end{itemize}
+Para validar esta parte de la gramática se establecen una serie de test que se adjuntan a la carpeta \verb|\resources\statements| , con test definidos para los distintos bucles
+que se describen.
+
+\paragraph{Sentencias SQL}
+Dentro del código de un objeto PowerBuilder existe la capacidad de realizar directamente sentencias SQL y que son lanzadas a una conexión previamente establecida a una base de datos.
+Esta parte de la gramática es importante puesto que uno de los requisitos establecidos por la empresa Savia, es posibilitar la recuperación de las llamadas a base de datos desperdigadas
+por el sistema, que hacen de la tarea de modificación de cualquier campo de una base de datos un proceso muy tedioso.
+
+\begin{itemize}
+ \item COMMIT
+ \item CONNECT
+ \item DISCONNECT
+ \item ROLLBACK
+ \item SELECT
+ \item UPDATE
+ \item INSERT
+ \item DELETE	
+ \item OPENCURSOR
+ \item CLOSECURSOR
+ \item DECLARECURSOR
+ \item FETCHCURSOR
+\end{itemize}
+ 
+
+\paragraph{Funciones}
+
+
+
+\paragraph{Expresiones}
+
+\subsubsection{Estructuras propias}
+
+En esta sección se analizarán las estructuras propias del 
+\paragraph{Estructura «forward»}
+\paragraph{Estructura «type»}
+\paragraph{Estructura «variables»}
+\paragraph{Estructura «framework»}
+\paragraph{Estructuras «event» y «on»}
+\paragraph{Estructuras «prototipos de funciones»}
+\paragraph{Comandos propios}
+
+\subsection{Desarrollo, test y validación}
+
+Durante el proceso de desarrollo se realizan 5 iteraciones dirigidas por los bloques de test establecidos en la fase anterior de la iteración:
+
+Como muestra de ello se adjunta el listado\ref{fig:common-structures} resultante del primer bloque de testing que incluye las «Estructuras comunes»\ref{subsec:EstructurasComunes}
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/Testing01.png}
+\caption{Resultados del testing de estructuras comunes}
+\label{fig:common-structures}
+\end{center}
+\end{figure}
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/Testing02.png}
+\caption{Resultados del testing de la gramática completa}
+\label{fig:full-grammar-test}
+\end{center}
+\end{figure}
+
+\section{Iteracción 2: Sistema de validación del software heredado}
+\section{Iteracción 3: Generación del InventoryModel}
+\section{Iteracción 4: Tranformación de tipos internos}
+\section{Iteracción 5: Transformación de miembros internos y métodos}
+\section{Iteracción 6: Transformación de sentencias}

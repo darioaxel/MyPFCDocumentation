@@ -1,0 +1,52 @@
+\BOOKMARK [0][-]{chapter*.1}{Resumen}{}% 1
+\BOOKMARK [0][-]{chapter*.2}{\315ndice general}{}% 2
+\BOOKMARK [0][-]{chapter*.3}{\315ndice de cuadros}{}% 3
+\BOOKMARK [0][-]{chapter*.4}{\315ndice de figuras}{}% 4
+\BOOKMARK [0][-]{chapter*.5}{\315ndice de listados}{}% 5
+\BOOKMARK [0][-]{chapter*.6}{Listado de acr\363nimos}{}% 6
+\BOOKMARK [0][-]{chapter*.7}{Agradecimientos}{}% 7
+\BOOKMARK [0][-]{chapter.1}{Introducci\363n}{}% 8
+\BOOKMARK [1][-]{section.1.1}{Motivaci\363n}{chapter.1}% 9
+\BOOKMARK [1][-]{section.1.2}{Estructura del documento}{chapter.1}% 10
+\BOOKMARK [0][-]{chapter.2}{Objetivos}{}% 11
+\BOOKMARK [1][-]{section.2.1}{Objetivo principal}{chapter.2}% 12
+\BOOKMARK [2][-]{subsection.2.1.1}{Objetivos parciales}{section.2.1}% 13
+\BOOKMARK [2][-]{subsection.2.1.2}{Objetivos docentes}{section.2.1}% 14
+\BOOKMARK [2][-]{subsection.2.1.3}{Recursos tecnol\363gicos}{section.2.1}% 15
+\BOOKMARK [0][-]{chapter.3}{Estado del arte}{}% 16
+\BOOKMARK [1][-]{section.3.1}{Ingenieria inversa}{chapter.3}% 17
+\BOOKMARK [1][-]{section.3.2}{Transformaci\363n de modelos}{chapter.3}% 18
+\BOOKMARK [1][-]{section.3.3}{Modernizaci\363n del software}{chapter.3}% 19
+\BOOKMARK [1][-]{section.3.4}{PowerBuilder y Powerscript}{chapter.3}% 20
+\BOOKMARK [1][-]{section.3.5}{KDM}{chapter.3}% 21
+\BOOKMARK [2][-]{subsection.3.5.1}{El metamodelo KDM}{section.3.5}% 22
+\BOOKMARK [1][-]{section.3.6}{ANTLRv4}{chapter.3}% 23
+\BOOKMARK [1][-]{section.3.7}{Java 1.8 y Lambdas}{chapter.3}% 24
+\BOOKMARK [1][-]{section.3.8}{MoDisco}{chapter.3}% 25
+\BOOKMARK [1][-]{section.3.9}{Aproximaci\363n a la transformaci\363n eficiente de lenguajes de programaci\363n a KDM en 3 pasos}{chapter.3}% 26
+\BOOKMARK [0][-]{chapter.4}{M\351todo y fases de trabajo}{}% 27
+\BOOKMARK [1][-]{section.4.1}{Proceso Unificado \301gil}{chapter.4}% 28
+\BOOKMARK [1][-]{section.4.2}{Estructura de las iteracciones del desarrollo}{chapter.4}% 29
+\BOOKMARK [1][-]{section.4.3}{Evoluci\363n del Proyecto}{chapter.4}% 30
+\BOOKMARK [2][-]{subsection.4.3.1}{Iteraci\363n 0: Planificaci\363n de las iteraciones}{section.4.3}% 31
+\BOOKMARK [2][-]{subsection.4.3.2}{Iteraci\363n 1: Desarrollo de la gram\341tica ANTLRv4 de Powerscript}{section.4.3}% 32
+\BOOKMARK [2][-]{subsection.4.3.3}{Iteraci\363n 2: Sistema de validaci\363n del software heredado}{section.4.3}% 33
+\BOOKMARK [2][-]{subsection.4.3.4}{Iteraci\363n 3: Generaci\363n del InventoryModel}{section.4.3}% 34
+\BOOKMARK [2][-]{subsection.4.3.5}{Iteraci\363n 4: Tranformaci\363n de tipos internos}{section.4.3}% 35
+\BOOKMARK [2][-]{subsection.4.3.6}{Iteraci\363n 5: Transformaci\363n de miembros internos y m\351todos}{section.4.3}% 36
+\BOOKMARK [2][-]{subsection.4.3.7}{Iteraci\363n 6: Transformaci\363n de sentencias}{section.4.3}% 37
+\BOOKMARK [0][-]{chapter.5}{Resultados}{}% 38
+\BOOKMARK [1][-]{section.5.1}{Iteraci\363n 0: Planificaci\363n de las iteraciones}{chapter.5}% 39
+\BOOKMARK [1][-]{section.5.2}{Iteracci\363n 1: Desarrollo de la gram\341tica ANTLRv4 de PowerBuilder}{chapter.5}% 40
+\BOOKMARK [2][-]{subsection.5.2.1}{Planificaci\363n y requerimientos}{section.5.2}% 41
+\BOOKMARK [2][-]{subsection.5.2.2}{An\341lisis y dise\361o}{section.5.2}% 42
+\BOOKMARK [2][-]{subsection.5.2.3}{Desarrollo, test y validaci\363n}{section.5.2}% 43
+\BOOKMARK [1][-]{section.5.3}{Iteracci\363n 2: Sistema de validaci\363n del software heredado}{chapter.5}% 44
+\BOOKMARK [1][-]{section.5.4}{Iteracci\363n 3: Generaci\363n del InventoryModel}{chapter.5}% 45
+\BOOKMARK [1][-]{section.5.5}{Iteracci\363n 4: Tranformaci\363n de tipos internos}{chapter.5}% 46
+\BOOKMARK [1][-]{section.5.6}{Iteracci\363n 5: Transformaci\363n de miembros internos y m\351todos}{chapter.5}% 47
+\BOOKMARK [1][-]{section.5.7}{Iteracci\363n 6: Transformaci\363n de sentencias}{chapter.5}% 48
+\BOOKMARK [0][-]{chapter.6}{Conclusiones y propuestas}{}% 49
+\BOOKMARK [1][-]{section.6.1}{Conclusiones}{chapter.6}% 50
+\BOOKMARK [0][-]{appendix.Alph1}{Gram\341tica resultante de la iteraci\363n 1}{}% 51
+\BOOKMARK [0][-]{appendix*.8}{Bibliograf\355a}{}% 52

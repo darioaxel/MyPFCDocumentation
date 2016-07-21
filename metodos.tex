@@ -1,0 +1,130 @@
+\chapter{Método y fases de trabajo}
+
+Como metodología de trabajo se ha seleccionado, tras un primer estudio de la complejidad del proyecto y
+de los recursos disponibles, una versión simplificada del Proceso Unificado de Rational \cite{Ambler2002} que desarrolló Scott Ambler, 
+conocida como Proceso Unificado Ágil\footnote{traducción del inglés Agile Unified Process}. Esta metodología describe un proceso mas sencillo que
+mezcla los principios del PUR con técnicas ágiles como el Desarrollo guiado por pruebas de software, \textit{"(TDD)"} \footnote{Test Driven Development } \cite{Beck2003}.
+
+\section{Proceso Unificado Ágil}
+Por tanto en el desarrollo del software se mantendrán los principios base del Proceso Unificado de Software: 
+\begin{itemize}
+\item Implementación de un desarrollo dirigido por casos de uso, enfocado a dar valor al cliente y a cubrir
+las expectativas mediante la generación de documentación, casos de prueba, etc. 
+
+\item Ampliando el punto anterior,la calidad y la estandarización del resultado serán un referente, 
+cumpliendo el segundo principio del desarrollo al plantear un trabajo centrado en arquitectura.
+
+\item Un ciclo de vida iterativo, con un crecimiento incremental y en espiral permitirá mantener una gestión de riesgos
+de forma periódica y la retroalimentación típica de los procesos ágiles sobre la que basar la siguiente iteración. 
+Dentro de cada iteración se implementará un ciclo del proceso de desarrollo basado en test.
+\end{itemize}
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/pua-cicle.png}
+\caption{Ciclo de vida PUA}
+\label{fig:ciclo-pua}
+\end{center}
+\end{figure}
+
+Y de entre las prácticas del modelado ágil recomendadas se seguirán las siguientes \nocite{AgileModeling}: 
+\begin{itemize}
+\item Una activa participación de los depositarios finales del software, haciéndolos copartícipes de las decisiones a tomar durante 
+el proceso de desarrollo de una manera activa. 
+\item Un modelado inicial de la arquitectura de alto nivel para identificar la estrategia a tomar en la creación del producto en desarrollo. 
+\item Generación de documentación de manera continua en todos los pasos del desarrollo, y no como una tarea aislada, 
+establecido en una única localización y utilizando para ello el estándar de calidad máximo. 
+Para esta tarea usaremos el Lenguaje Unificado de Modelado (UML)\cite{UML}. 
+\item Priorización en los requerimientos, ordenados y establecidos en colaboración con depositarios finales, 
+que permitan proveer los mejores “resultados sobre la inversión”\footnote{del inglés \textit{ROI: return on investments}} posibles 
+\item Realización de una lluvia de ideas sobre el modelo entre cada 
+iteración. Con ello se exploraran los detalles de cada requerimiento y las cuestiones a plantear durante el diseño. 
+\item Planteamiento de diversos modelos y selección del mejor para su implementación, teniendo en cuenta sus pros y contras. 
+\item Estudio inicial de los requerimientos, invirtiendo al comienzo del proyecto un periodo de tiempo en establecer el 
+alcance del mismo y creando una lista de prioridades en el desarrollo.
+\end{itemize}
+
+El desarrollo dirigido por test está definido por la creación de un sistema de pruebas, bien en el momento 
+de la toma de requerimientos, bien al establecer el diseño, y posteriormente una codificación suficiente para permitir
+al software superar dichos tests. Esta metodología de trabajo permite reducir procesos posteriores de verificación así como los errores no controlados.
+
+\section{Estructura de las iteracciones del desarrollo}
+\label{sec:estruc-iter-desarro}
+
+Una vez establecida la metodología base, procede detallar la estructura elegida para los ciclos de vida del desarrollo. 
+Como se ha especificado en el punto anterior y siguiendo otra mas de las recomendaciones del modelado ágil,
+se utilizará una aproximación dirigida a test o Test-driven development para cada una de las iteraciones de imlementación del ciclo en espiral. 
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=0.5\textwidth]{/tdd-flowchart.png}
+\caption{Flujo de las iteracciones del desarrollo basadas en TDD}
+\label{fig:tdd-flowchart}
+\end{center}
+\end{figure}
+
+Los procesos a realizar, en cada una de las iteraciones, serán los siguientes:
+
+\begin{itemize}
+\item \textbf{Generación de un test.} Toda iteración ha de iniciarse con la creación de un test, que inevitablemente fallará,
+para cubrir los requerimientos y especificaciones de los casos de uso identificados en el análisis del proyecto. 
+Este test será la base sobre la cual se realizará la codificación del producto y cuyo objetivo ha de ser su superación con resultado positivo. 
+
+\item \textbf{Ejecución de la batería de test acumulados y verificación del fallo del que se acaba de crear.} Una vez creado el test a superar, 
+lanzaremos todos los test que se han ido generando en las anteriores iteraciones del desarrollo, para comprobar que se superan todos. 
+
+\item \textbf{Escritura del código estrictamente necesario para cumplir con los requerimientos que permitan pasar el test.} Se toma como precepto 
+aplicar la metáfora \textit{"Déjelo simple"} \footnote{traducción de "Keep It Simple, Stupid" (KISS) }. 
+
+\item \textbf{Ejecución de los test.} Una vez creado el código, se ha de pasar de nuevo el conjunto de test acumulado 
+para comprobar que no se ha interferido con el desarrollo existente de forma indeseada. 
+
+\item \textbf{Refactorización del código.} Limpieza, reubicación y eliminación de posibles duplicidades. Además ha de una revisión de todo 
+el código para que cumpla los estándares de calidad previstos.
+\end{itemize}
+
+\section{Evolución del Proyecto} \label{evolucion-proyecto}
+Como consecuencia de la metodología seleccionada para la construcción del proyecto se mostrará a continuación el listado de iteracciones que se pretenden 
+llevar a cabo para la obtención del producto final desarrollado. El proyecto se ha estructurado en 6 iteraciones + una iteración inicial de planificación:
+
+\subsection{Iteración 0: Planificación de las iteraciones}
+
+Esta primera iteración se utilizará para establecer la base tecnológica necesaria para el desarrollo del proyecto y se integrarán las librerias externas.
+Además se desarrollará una reunión con Savia para recabar información acerca del detalle de las necesidades 
+específicas que tienen para obtener los procesos de negocio mas importantes del software a transformar. Una vez recabados los requerimientos y analizado 
+el proyecto en conjunto, se establecerá una arquitectura base así como un plan de desarrollo para cada una de las iteraciones siguientes.
+
+
+
+\subsection{Iteración 1: Desarrollo de la gramática ANTLRv4 de Powerscript}
+
+En esta iteración se abordará el desarrollo de la gramática que permita reconocer el lenguaje Powerscript. Para ello se realizará un análisis pormenorizado
+de cada una de las estructuras y elementos, ordenandolos en complejidad creciente y estableciendo unos mínimos que servirán como test para los ciclos de
+desarrollo basados en TDD. Una vez finalizado el proceso de desarrollo, comprobaremos que todos los test establecios han sido superados por el resultado
+del proceso.
+
+
+\subsection{Iteración 2: Sistema de validación del software heredado}
+
+Generada una base que permita analizar el contenido de los ficheros de código del sistema heredado en la iteración anterior, el siguiente hito será generar un
+sistema de comprobación que el proyecto que se analizará está correctamente establecido. Así se acotarán en mayor medida posibles errores de análisis producidos
+por una defectuosa importación del código fuente del sistema.
+
+
+\subsection{Iteración 3: Generación del InventoryModel}
+
+Como primera parte de la transformación del sistema, y siguiendo el planteamiento establecido tanto en el artículo referenciado en secciones anteriores de este
+documento (véase \S\,\ref{sec:3stepsapproach}), se establece como objetivo de la iteración el generar una primera aproximación al modelo de representación. En 
+este primer modelo se incluirá el \textit{InventoryModel} resultado del análisis de los artefactos que componen el sistema. 
+
+
+
+\subsection{Iteración 4: Tranformación de tipos internos}
+
+En la siguiente iteración, se 
+\subsection{Iteración 5: Transformación de miembros internos y métodos}
+
+
+
+\subsection{Iteración 6: Transformación de sentencias}
+

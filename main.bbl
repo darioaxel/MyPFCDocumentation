@@ -1,0 +1,71 @@
+\begin{thebibliography}{Amb02}
+
+\bibitem[Agi]{AgileModeling}
+{Agile Modeling Best Practices}.
+\newblock http://www.agilemodeling.com/essays/bestPractices.htm.
+
+\bibitem[Amb02]{Ambler2002}
+Scott Ambler.
+\newblock {\em {Agile Modeling: Effective Practices for eXtreme Programming and
+  the Unified Process}}.
+\newblock 2002.
+
+\bibitem[Bec03]{Beck2003}
+Kent Beck.
+\newblock {\em {Test-Driven Development By Example}}, volume~2.
+\newblock 2003.
+
+\bibitem[CC90]{Chikofsky1990}
+EJ~Chikofsky y JH~Cross.
+\newblock {Reverse engineering and design recovery: A taxonomy}.
+\newblock {\em Software, IEEE}, 1990.
+\newblock url:
+  \url{http://ieeexplore.ieee.org/xpls/abs\_all.jsp?arnumber=43044}.
+
+\bibitem[CP07]{Canfora2007}
+Gerardo Canfora y Massimiliano~Di Penta.
+\newblock {New Frontiers of Reverse Engineering}.
+\newblock 2007.
+
+\bibitem[Ecl]{EclipseFoundation}
+{Eclipse Foundation}.
+\newblock http://www.eclipse.org/.
+
+\bibitem[Inc08]{PowerBuilder}
+Sybase Inc.
+\newblock {\em {PowerBuilder: Users reference guide}}.
+\newblock 2008.
+
+\bibitem[KDM]{KDM}
+{Object Management Group - UML}.
+\newblock http://uml.org/.
+
+\bibitem[OMG]{OMG}
+{The Object Management Group® (OMG®) is an international, open membership,
+  not-for-profit technology standards consortium, founded in 1989}.
+\newblock http://www.omg.org/technology/kdm/.
+
+\bibitem[Par]{Parr2012}
+Terence Parr.
+\newblock {\em {The Definitive ANTLR4 Reference Guide}}.
+
+\bibitem[PRP05]{puder05:_distr_system_archit}
+A.~Puder, K.~Römer, y F.~Pilhofer.
+\newblock {\em Distributed Systems Architecture: A Middleware Approach}.
+\newblock Morgan Kaufman, 2005.
+
+\bibitem[Sav]{Savia}
+{Soluciones software de recursos humanos y nómina}.
+\newblock http://www.savia.net/.
+
+\bibitem[UML]{UML}
+{Specification of way the world models not only application structure,
+  behavior, and architecture, but also business process and data structure.}
+\newblock http://www.uml.org/.
+
+\bibitem[Wul12]{Wulf2012}
+Hasselbring Wulf, Frey.
+\newblock {A Three-Phase approach to efficiently transform c# into KDM}.
+\newblock 2012.
+
+\end{thebibliography}

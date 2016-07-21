@@ -1,0 +1,313 @@
+\chapter{Estado del arte}
+\label{chap:Estado del arte}
+
+\drop{E}{n} en capítulo que se presenta a continuación, se definirán primero los conceptos teóricos en los que se basa el desarrollo de
+projecto, así como se introducen los principios de algunas de las herramientas y lenguajes de programación que han sido utilizados.
+Los primeros tres puntos desarrollan los conceptos de ingeniería inversa, transformación de modelos y la modernización del software,
+son básicos para entender el planteamiento que se ha llevado a cabo para cumplir los objetivos propuestos en el capítulo siguiente. 
+Además en la sección Powerbuilder y Powerscript se introduce el lenguaje usado en la aplicación a la que aplicaremos las técnicas 
+explicadas. En las siguientes secciones se numeraran las diferencias y mejoras mas significativas de las versiones actuales 
+de las herramientas utilizadas durante el desarrollo llevado a cabo.
+
+\section{Ingenieria inversa} \label{sec:Ingeniería inversa}
+
+De acuerdo con la definición de ingeniería inversa propuesta por Chikofsky y Cross en el
+artículo \cite{Chikofsky1990}, establecemos que en el contexto de un proceso de
+ingeniería basado en modelos, el resultado de este análisis es un modelo. Para llegar a este modelo,
+se proponen como posibles soluciones, el análisis estático del código fuente o el seguimiento de la
+ejecución de la aplicación mediante herramientas diseñadas a tal efecto. En el caso de no disponer
+del código fuente por no estar disponible, el proceso de ingeniería debe también llevar a cabo
+la descompilación o desensamblado de los archivos binarios del sistema, para obtener un códido
+válido para la tarea que se intenta realizar.
+
+\section{Transformación de modelos} \label{sec:Transformación de modelos}
+
+Una transformación basada en modelos toma como entrada un sistema, que está basado en
+determinado meta-modelo y generar como resultado otro modelo que se determina por un metamodelo
+distinto. Existen diferentes aproximaciones a la trasformación basada en modelos como
+la manipulación directa, relacional, operacional, guiada por estructuras, etc [czarnecki and helsen
+2003]. Todas estas aproximaciones implementan actividades ampliamente utilizadas dentro del
+desarrollo del software tales como son la refactorización, ingeniería inversa y el uso de patrones.
+
+\section{Modernización del software} \label{sec:Modernización del software}
+
+La modernización del software es un proceso de apliación de técnicas de reingeniería a una
+aplicación obsoleta, para conseguir que cumpla una serie de nuevos requerimientos e incrementar
+la calidad del sistema. El proceso de modernización de un sistema puede ser visualizado como
+una herradura, donde el lado izquierdo se compone de la extracción de información e ingeniería
+inversa, el lado derecho el proceso de desarrollo e ingeniería y la conexión entre ambas partes
+apliación de la transformación al sistema antiguo para llegar al sistema objetivo.\cite{Kazman et al.
+1998]
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/horseshoe.jpg}
+\caption{Diagrama del proceso de modernización de software}
+\label{fig:informatica}
+\end{center}
+\end{figure}
+
+\section{PowerBuilder y Powerscript}\label{sec:PowerBuilder y Powerscript}
+
+PowerBuilder es un entorno completo para el desarrollo de aplicaciones de negocio, propiedad de la empresa Sysbase.
+Este sistema está compuesto por frameworks de desarrollo, herramientas de conexión, gestión y tratamiento de 
+bases de datos, así como de un lenguaje propio de programación PowerScript®.
+Actualmente la versión de trabajo para el entorno de desarrollo y la aplicación a estudio es la 11.5.,
+mientras que la versión más actual del software de PowerBuilder® es la 12.5.
+
+Para la creación de aplicaciones con PowerBuilder se dispone de un IDE de desarrollo propio. 
+Este IDE permite realizar la implementación de programas de un modo visual, abstrayendo al desarrollador 
+de la codificación de los comandos.
+
+Powerscript es el usado para especificar el comportamiento de la aplicación en respuesta a eventos 
+del sistema o del usuario, tal como cerrar una ventana o presionar un botón. Las aplicaciones desarrolladas
+con PowerBuilder® se ejecutan exclusivamente en el sistema operativo Microsoft Windows®.
+
+\subsubsection{Objectos PowerBuilder}
+
+Un programa Powerbuilder® está construido como una colección de objetos proveidos 
+por el propio entorno de desarrollo y los objetos hijos que el desarrollador crea mediante su extensión.
+
+\begin{table}[hp]
+  \centering
+  \resizebox{\textwidth}{!}
+  {\input{tables/PowerscriptObjects.tex}
+  }
+  \caption[Semánticas de \acs{RPC} en presencia de distintos fallos]
+  {Semánticas de \acs{RPC} en presencia de distintos fallos
+    (\textsc{Puder}~\cite{puder05:_distr_system_archit})}
+  \label{tab:rpc-semantics}
+\end{table}
+
+\paragraph{Objetos de tipo Aplicación}
+Estos objetos representan el punto de entrada a una aplicación. Se trata de un objeto que
+lista el conjunto de librerias que conforman la aplicación en su totalidad además de identificarla. Al igual que
+el resto de objetos (DataWindow, Estructura, etc) se guarda en una librería (archivo PBL) que generará el compilador.
+
+\paragraph{Objetos de tipo Ventanas}
+Las ventanas son la interfaz principal de comunicación entre el usuario y la aplicación PowerBuilder.
+En ellas se muestra información, y se recupera de la entrada que el usuario utilice, ya sea respondiendo
+a eventos lanzados por clicks de ratón o texto introducido por teclado.
+Una ventana consiste en:
+\begin{itemize}
+\item Propiedades de definición de la apariencia y comportamiento, tales como nombre de la barra de titulo, botón de minimizado/maximizado, tamaño, etc.
+\item Eventos lanzados por las acciones del usuario.
+\item Controles establecidos en la ventana.
+\end{itemize}
+
+\paragraph{Objectos DataWindow}
+Un DataWindow es un objeto que el desarrollador utiliza para recuperar y manipular datos desde una fuente externa. Así pues este tipo de objetos se comunicarán utilizando 
+sentencias del lenguaje SQL con bases de datos o hojas de cálculo Microsoft Excel. Normamente se utilizaran integrados dentro de objetos ventana para mostrar los datos
+recuperados al realizar una acción de esta.
+\paragraph{Objetos de tipo menú}
+Los objetos de tipo menú contienen listas de items que el usuario puede seleccionar desde la barra de menú de la ventana activa. Normalmente se trata de agrupaciones de elementos 
+relacionados, y cada uno de ellos permite al usuario lanzar una orden al sistema como puede ser la apertura de una ventana, la ejecución de un proceso o la edición del estilo de un campo de texto.
+\paragraph{Objetos de funciones}
+PowerBuilder permite al desarrollador definir dos tipos de clases de funciones: 
+\begin{itemize}
+ \item Funciones a nivel de objetos definidas para un menu o ventana particular. A su vez se pueden subdividir en funciones de sistema 
+ (disponibles siempre para objetos de una cierta clase) y funciones definidas por el usuario.
+ \item Funciones globales que no están asociadas a un objeto en particular y que se encuentran ubicadas en un objeto independiente. Al contrario que las funciones a nivel de objetos
+ realizan procesos de propósito general y puden ser utilizadas en cualquier tipo de objeto. Un ejemplo de este tipo de objetos serían funciones de cálculos matemáticos o manejo de cadenas. 
+\end{itemize}
+\paragraph{Objetos de estructuras}
+Una estructura es una colección de uno o mas variables relacionadas del mismo tipo o de diferentes tipos, que se encuentran definidas bajo un único nombre que las identifica.
+Por ejemplo, una estructura llamada s-user-struct que contiene las variables que identifican al usuario: Identificador, dirección, nombre, una imágen, etc.
+Al igual que en los objetos de funciones disponemos de dos tipos de estructuras:
+\begin{itemize}
+ \item Estructuras a nivel de objeto que se asocian a un determinado objeto tal como una ventana o menu. Estas estructuras se utilizaran en los scripts definidos para el propio objeto que lo contiene.
+ \item Estructuras globales no asociadas a un objeto determinado y que pueden ser declaradas para su usuo en cualquier script de la aplicación.
+\end{itemize}
+\paragraph{Objectos definidos por el usuario}
+Normalmente las aplicaciones tienen características en común. Un ejemplo claro de ello son los botones existentes en la mayoría de ventanas que permiten al usuario
+cerrar, minimizar o maximizar un objeto.  
+Al identificar este tipo de agrupación de  se puede crear un objeto propio definido por el usuario una única vez y utilizarlo en los puntos de la apliación que lo necesiten.
+Los objetos definidos por el usuario pueden agruparse en objetos de usuario estándarizados y objetos de usuario específicos. 
+
+La división establece aquellos que pueden ser
+exportados a otras aplicaciones PowerBuilder y los que son específicos para una en concreto. Además dentro de ellos podemos diferenciarlos entre los objetos que implican 
+elementos visuales como pueden ser agrupaciones de botones, y los que contienen componentes no visuales como por ejemplo agrupaciones de funciones de cálculo que representan 
+reglas de negocio y que pueden heredar eventos y propiedades de objetos definidos por el sistema.
+
+\paragraph{Proyectos y librerías}
+Los ficheros de extensión PBL y PBT definen estructuralmente la forma en la que el compilador generará la aplicación ejecutable resultante. Así pues, el fichero PBT contiene las relaciones establecidas entre las distintas
+librerias a generar y el nombre del producto final. Por otro lado los ficheros PBL definen las librerias resultantes de la compilación de objetos relacionados, que pueden encontrarse en el mismo directorio o
+en directorios separados.
+\cite{PowerBuilder}
+
+\section{KDM} \label{sec:KDM}
+
+En Junio de 2003, OMG\cite{OMG} creó un equipo de trabajo para modelar artefactos software en el contexto de sistemas obsoletos. Incialmente el grupo fue llamado \textit{Equipo de trabajo para la transformación de sistemas obsoletos},
+\footnote{traducción de «Legacy Transformation Task Force»} aunque pronto se les renombró a \textit{Equipo de trabajo para la modernización enfocada en la arquitectura} \footnote{traducción de «Architecture-Driven Modernization Task Force»} 
+En Noviembre de 2003 la \textit{ADMTF}\footnote{Siglas en inglés del nombre del equipo de trabajo} incorporó la solicitud de propuesta para la especificación \textit{Knowledge Discovery Metamodel}(KDM).
+La solicitud de propuesta establecía que el estándar del metamodelo KDM debía:
+\begin{itemize}
+ \item Representar los artefactos de los sistemas obsoletos como entidades, relaciones y atributos.
+ \item Incluir los artefactos externos con los que el interactuen los artefactos del software.
+ \item Soportar diversos lenguajes y plataformas.
+ \item Consistir en un núcleo independiente del lenguaje y la plataforma que pueda extenderse en caso necesario.
+ \item Definir una terminología unificada para los artefactos de software obsoleto.
+ \item Describir las estructuras lógicas y físicas de los sistemas obsoletos.
+ \item La posibilidad de realizar agregaciones o modificaciones de la estructura física del sistema.
+ \item Facilitar la identificación y trazabilidad de los artefactos desde la estructura lógica hacia la física.
+ \item Representar el comportamiento de los artefactos hacia abajo, pero no por debajo, del nivel procedural.
+\end{itemize}
+\cite{KDM}
+
+\subsection{El metamodelo KDM}\label{sec:KDM-metamodel}
+
+El metamodelo KDM se divide en varias capas que representan tanto los artefactos físicos como los lógicos de un sistema obsoleto. Mas allá cada capa de 
+abstracción diferente ssepara el conocimiento sobre el sistema obsoleto en diversos estructuras de sofware conocidas como \textit{vistas de la arquitectura}\footnote{Traducción de «Architecture views»}.
+Las cuatro capas definidas en el estándar se describen a continuación:
+
+\subsubsection{Capa de infraestructura}
+La capa de infraestructura define el nivel mas bajo de las capas de abstracción y contiene una pequeña lista de conceptos utilizados a traves de toda la especificación.
+
+\paragraph{Core} Define las abstracciones básicas de KDM, que son \textit{KDMEntity} y \textit{KDMRelationship}
+\paragraph{KDM} Proporciona el contexto compartido por todos los modelos KDM. Este paquete define los elementos que constituyen el «framework» de cada representación KDM.
+Por ejemplo, cada representación KDM consiste en uno o mas elementos de tipo \textit{Segment} que contienen diversos modelos de KDM.
+\paragraph{Source} Define el conjunto de artefactos físicos del sistema de información heredado y permite referenciar partes del código
+fuente. Para ello se genera el \textit{Inventory Model}, que enumera todos los artefactos físicos del sistema obsoleto (como ficheros de código, imágenes, ficheros de configuración, etc).
+Además este artefacto es la base que se utilizará para referenciar a los artefactos físicos desde los modelos KDM. Mas aún, los elementos del \textit{Inventory Model} permiten identificar mediante el 
+uso de \textit{AbstractInventoryRelationships} relaciones de dependencia definidas en el sistema heredado del tipo \textit{DependsOn} que declaran la interrelación de elementos durante pasos del 
+proceso de reingeniería.
+\end{itemize}
+
+\subsubsection{Capa de elementos del programa}
+Proporciona una representación intermedia, independiente del lenguaje de programación, para representar los constructores comunes a varios lenguajes de programación. Los dos paquetes que lo forman son:
+\paragraph{Code}
+Se trata de un paquete que define un conjunto de \textit{CodeItems} que representan elementos comunes presentes en diversos lenguajes como pueden ser; métodos, clases, tipos de datos, funciones o intefaces.
+Los elementos \textit{CodeItem} se especializan en 3 tipos base:
+\begin{itemize}
+ \item \textbf{Module}: una unidad de programa discreta e identificable que contiene otros elementos y puede ser utilizada como componente lógico del software. Y a su vez se divide en \textit{Package}, \textit{CompilationUnit}
+ ,\textit{CodeAssembly}, etc. 
+ \item \textbf{ComputationalObject}: representación de métodos, funciones, etc.
+ \item \textbf{DataType}: que definen items nombrables del sistema obsoleto heredado como variables, parámetros de funciones, etc.
+\end{itemize} 
+
+\paragraph{Action}
+Define las acciones llevadas a cabo por los elementos del paquete code. Los elementos de ambos paquetes se representan
+dentro de un modelo de código \textit{CodeModel}.
+
+\subsubsection{Capa de recursos}
+Permite representar conocimiento sobre el entorno y los recursos de ejecución utilizados por los sistemas de información
+heredados. Dispone de cuatro paquetes:
+\begin{itemize}
+\item \textbf{Data} Define los aspectos de los datos.
+\item \textbf{Event} Define el modelo de eventos, condiciones y acciones del
+sistema de información heredado.
+\item \textbf{UI} Define los aspectos de la interfaz de usuario del sistema de
+información heredado.
+\item \textbf{Platform} Define las características de la plataforma de ejecución.
+\end{itemize}
+
+\subsubsection{Capa de Abstracción}
+Permite representar el conocimiento específico de dominio a la vez que da una visión de negocio de los sistemas de
+información heredados. Dispone de tres paquetes.
+\begin{itemize}
+\item \textbf{Conceptual} Define los elementos específicos de dominio del sistema de información heredado.
+\item \textbf{Structure} Define los componentes estructurales de los sistema de información heredados, es decir, los subsistemas, capas, paquetes, etc.
+\item \textbf{Build} Define los artefactos finales relativos al sistema de información heredado.
+\end{itemize}
+
+\section{ANTLRv4} \label{sec:ANTLRv4}
+Un parser es un programa, normalmente parte de un compilador, que recibe entradas de forma secuencial como instrucciones de un fichero de código,
+etiquetas de marcado, o cualquier tipo de texto y lo divide en trozos que pueden ser utilizados por otro programa.
+
+ANTLR es un generador de parsers que permite crear automaticamente árboles de representación de las estructuras que cumplen las gramáticas que el usuario
+diseña. También es capaz de generar objetos para recorrer el árbol generado nodo a nodo y a traves de ellos realizar tareas programadas.
+En su desarrollo se ha utilizado el lenguaje de programación Java, y su utilización está ampliamente extendida, destacando por su popularidad entre el resto
+de competidores. 
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/antlr-tree.png}
+\caption{Vista de un árbol generado mediante ANTLR4}
+\label{fig:arbol-antlr}
+\end{center}
+\end{figure}
+
+\paragraph{Mejoras de ANTLRv4 sobre sus versiones anteriores}
+
+La versión 4 de ANTLR tiene una serie de nuevas capacidades que permiten reducir la curva de aprendizaje y hace el desarrollo de gramaticas y aplicaciones 
+de reconocimiento de lenguajes mucho mas sencillas: 
+\begin{itemize}
+\item La principal mejora de esta versión es la aceptación por defecto de toda gramática, con la excepción de la recursión indirecta a izquierda. ANTLRv4 no
+genera conflictos con la gramática o lanza avisos relacionados con la ambiguedad de las gramáticas.
+\item Esta última versión utiliza una nueva tecnología llamada \textit{Adaptative LL(*) o ALL(*)}. Por ella se realiza un análisis dinámico en tiempo de ejecución en vez
+de el estático realizado en versiones anteriores, antes de la ejecución del parser generado. Como los parsers \textit{ALL(*)} tienen acceso a las secuencias 
+que se le introducen, pueden directamente encontrar la forma de reconocer las secuencias hilando la gramática. Hasta ahora, por el contrario, el análisis 
+estático, tenía que considerar todas las posibles sentencias de entrada que pudieran existir.
+\item ANTLR v4 automáticamente reescribe las reglas con recursión a izquierda en sus equivalentes sin ella, donde las reglas se referencian inmediatamente así mismas.
+La única restricción que se pone es que existe es que las reglas no pueden referencias a otra regla en la parte izquierda de una alternativa que pueda volver
+a referenciar a la regla inicial sin emparejarse a un token.
+\begin{listing}[
+  float=ht,
+  language = ANTLRv4,
+  caption  = {ALL(*)},
+  label    = code:all*]
+ expr : expr '*' expr 
+  | expr '+' expr 
+  | INT
+  ;
+\end{listing}
+\item El mayor cambio de la nueva versión v4 es que se desenfatiza la inclusión de código embebido dentro de la gramática, en favor de objetos \textit{listener y visitor}. Este nuevo
+mecanismo de desarrollo permite desacoplar la gramática del código. Sin acciones embebidas, la reutilización de gramáticas es mucho mas sencilla sin ni siquiera
+tener que recompilar los parsers generados.
+\end{itemize}
+\cite{Parr2012}
+
+
+
+\section{Java 1.8 y Lambdas}
+
+
+\section{MoDisco} \label{sec:MoDisco}
+
+MoDisco es un projecto «open source» que forma parte de manera oficial de la \textit{Eclipse Foundation}(EF)\cite{EclipseFoundation} y está integrado en el
+projecto base de modelado de dicha fundación, promocionando las técnicas de \textit{Ingeniería dirigida a modelos}(MDE) \footnote{Traducción de \textit{Model Driven Engineering}} dentro de la comunidad
+de la comunidad de Eclipse. Además está reconocida por la OMG como proveedor de referencia para la implementación de diversos estándares como:
+\begin{itemize}
+ \item \textit{Knowledge Discovery Metamodel} (KDM)
+ \item \textit{Software Measurement Metamodel} (SMM)
+ \item \textit{Generic Abstract Syntax Tree Metamodel} (GASTM)
+\end{itemize}
+
+MoDisco provee de una serie de componentes que permiten eleborar soluciones de ingeniería inversa para la transformación, con idependencia del lenguaje en el que esté desarrollado,
+de sistemas obsoletos utilizando metamodelos. De manera nativa se ofrecen soluciones para Java, pero gracias a la API que proporciona se puede representar cualquier otro lenguaje.
+El soporte al proceso de reingeniería comienza con la especificación de los metamodelos, cuyo detalle puede variar en funcion de la tecnología con la que se trabaje. Con objeto de
+obtener el modelo, se han de usar los llamados \textindent{Discoverers}. Todos los \textindent{Discoverers} pueden ser acoplados al «framework», y usados a traves de él, únicamente
+con su registro en el \textit{Discoverer Manager}.
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=0.8\textwidth]{/MoDisco.png}
+\caption{Estructura MoDisco}
+\label{fig:3phase-steps}
+\end{center}
+\end{figure}
+
+De manera similar a los \textit{Discoverers}, MoDisco proporciona también \textit{Generators} que se corresponden con los metamodelos soportados. Estos \textit{Generators} pueden 
+igualmente ser acoplados al «framework» y habilitan la transformación de los modelos generados en otros tipos de artefactos. Por ejemplo, para Java se disponen de \textit{Generators}
+que permiten transformar los sistemas en estudio en estándares como KDM y su representación estándar basada en XMI (XML Metadata Interchange) o UML (Unified Modeling Language).
+
+
+\section{Aproximación a la transformación eficiente de lenguajes de programación a KDM en 3 pasos} \label{sec:3stepsapproach}
+La propuesta de aproximación a la transformación de sistemas heredados obsoletos en 3 pasos o fases hecha por Christian Wulf \cite{Wulf2012}, define una estructuración 
+del proceso que permite la generación de un modelo en KDM desde el sistema inicial mediante los siguientes pasos:
+\begin{itemize}
+ \item \textbf{Tranformación de tipos internos}: En esta primera fase el sistema genera un fichero XMI con los artefactos KDM \textit{Segment} que a su vez contienen el \textit{InventoryModel}
+ y los \textit{CodeModel} de cada uno de los elementos contenedores del código fuente del sistema.
+ \item \textbf{Transformación de miembros internos y métodos}: La segunda fase utiliza el artefacto base \textit{Segment} generado en el paso anterior, y lo amplía añadiendo los \textit{CodeElments}
+  que representan tanto a los miembros instanciados dentro de cada contenedor de código, como los métodos de los mismos. Además recupera las relaciones entre \textit{CodeElements} y añade el \textit{LanguageUnit}
+  de cada uno.
+ \item \textbf{Transformación de sentencias}: La fase final del proceso es la encargada de mapear las sentencias del código y de generar los \textit{ActionElements} definidos en él.
+\end{itemize}
+
+\begin{figure}[!h]
+\begin{center}
+\includegraphics[width=1\textwidth]{/3phase.png}
+\caption{Esquema de los pasos llevados a cabo en la transformación}
+\label{fig:3phase-steps}
+\end{center}
+\end{figure}
+

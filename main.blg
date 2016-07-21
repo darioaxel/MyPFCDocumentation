@@ -1,0 +1,65 @@
+This is BibTeX, Version 0.99d (TeX Live 2013/Debian)
+Capacity: max_strings=35307, hash_size=35307, hash_prime=30011
+The top-level auxiliary file: main.aux
+The style file: es-alpha.bst
+Database file #1: main.bib
+I was expecting a `,' or a `}'---line 61 of file main.bib
+ : 
+ : isbn = {9781934356999},
+(Error may have been on previous line)
+I'm skipping whatever remains of this entry
+Warning--to sort, need author or key in Savia
+Warning--to sort, need author or key in KDM
+Warning--to sort, need author or key in OMG
+Warning--to sort, need author or key in EclipseFoundation
+Warning--to sort, need author or key in AgileModeling
+Warning--to sort, need author or key in UML
+Warning--empty publisher in Ambler2002
+Warning--empty publisher in Beck2003
+Warning--empty journal in Canfora2007
+Warning--empty publisher in PowerBuilder
+Warning--empty publisher in Parr2012
+Warning--empty year in Parr2012
+Warning--empty journal in Wulf2012
+You've used 14 entries,
+            2580 wiz_defined-function locations,
+            637 strings with 6117 characters,
+and the built_in function-call counts, 3731 in all, are:
+= -- 336
+> -- 109
+< -- 6
++ -- 31
+- -- 31
+* -- 206
+:= -- 551
+add.period$ -- 36
+call.type$ -- 14
+change.case$ -- 54
+chr.to.int$ -- 14
+cite$ -- 33
+duplicate$ -- 193
+empty$ -- 379
+format.name$ -- 44
+if$ -- 800
+int.to.chr$ -- 1
+int.to.str$ -- 0
+missing$ -- 13
+newline$ -- 67
+num.names$ -- 24
+pop$ -- 145
+preamble$ -- 1
+purify$ -- 82
+quote$ -- 0
+skip$ -- 145
+stack$ -- 0
+substring$ -- 104
+swap$ -- 13
+text.length$ -- 6
+text.prefix$ -- 5
+top$ -- 0
+type$ -- 92
+warning$ -- 13
+while$ -- 19
+width$ -- 17
+write$ -- 147
+(There was 1 error message)

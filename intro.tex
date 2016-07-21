@@ -1,0 +1,79 @@
+\chapter{Introducción}
+
+\drop{U}{no} de los mayores retos que pueden afrontar las empresas de desarrollo de software es la actualización de sistemas obsoletos,
+pero funcionales, para su adaptación a las nuevas arquitecturas de software y estándares actuales de calidad.
+
+Dentro del catálogos de herramientas de muchas empresas es fácil encontrar sistemas que se desarrollaron tiempo atrás y que en muchos casos, ya sea por desconocimiento
+o por falta de experiencia, no cumplen estándares que permitan su mantenimiento y mejora. Estas herramientas, que pueden ser aún funcionales y que contienen 
+la gran base de conocimiento de la lógica de negocio de la empresa que la desarrollo, terminan convirtiéndose en un problema enorme para el futuro de la propia empresa.
+El aprovechamiento del conocimiento encerrado en el código, es vital para evitar perdidas monetarias y de competitividad, que podrían incluso a la desaparción del 
+desarrollador. 
+
+Cuando se afronta una situación como la descrita anteriormente, es necesario realizar un estudio y valoración pormenorizado de la estratégia a seguir para
+conseguir superar el problema con el menor coste, pero obteniendo un sistema final que evite tener enfrentarse a la misma situación en el futuro.
+
+El mantenimiento del software se define como la \textit{modificación de un producto software después de su implantación para corregir fallos,
+para mejorar su funcionamiento u otros atributos, o para adaptar el producto a un entorno cambiante} \cite{Chikofsky1990}
+es uno de los procesos que en toda factoría de software se ha de llevar a cabo según los modelos de desarrollo establecidos.
+En concreto, y dada su alta popularidad y acoplamiento a las necesidades empresariales actuales, los modelos Ágiles y en Espiral 
+reservan en sus iteraciones cíclicas una parte para este proceso dentro de los pasos de Refactorización y Análisis de nuevos requisitos, respectivamente.
+
+La documentación de los programas es un aspecto sumamente importante, tanto en el desarrollo de la aplicación como en el mantenimiento de la misma. 
+El proceso de documentación debe realizarse de manera exhaustiva y en cada paso del desarrollo como recomiendan las técnicas ágiles. Todo aquel producto
+software que no cuente con la debida documentación, impide a futuros desarrolladores conocer detalladamente el funcionamiento del programa así como su mantenimiento
+de manera eficaz. 
+
+A la hora de abordar la compleja tarea de mantener sistemas en los que ni se dispone de acceso a documentación precisa, ni a los desarrolladores
+que crearon el proyecto, la IEEE-1219a\footnote{The IEEE SA-1219-1988 IEEE Standard for Software Maintenance} recomienda la utilización 
+de la ingeniería inversa como herramienta en el desarrollo del proceso. 
+
+Sin embargo la ingeniería inversa por si sola no implica la modificación del propio sistema, ya que se trata de \cite{Canfora2007} \textit{“un proceso de estudio y descripción sin cambios”} 
+y habrá de utilizarse un proceso mas amplio como la reingeniería de software para el mantenimiento y refactorización sistema objetivo. 
+Así pues se certifica que la reingeniería de software, en el estricto sentido de su definición como \textit{“El proceso de análisis de un sistema sujeto, para identificar los componentes del sistema, sus relaciones y crear una representación 
+del sistema en otra forma o nivel superior de abstracción”} \cite{Chikofsky1990} y los distintos subprocesos que se suelen incluir en el, es el proceso adecuado al propósito de actualización
+de las aplicaciones software que la industria demanda.
+
+La ventaja competitiva para las empresas que por su escalabilidad y de ahorro de costos en licencias supone el surgimiento de los nuevos
+conceptos de \textit{Software como Servicio} y \textit{Computación en la nube}, está forzando a la industria del software a rediseñar sus productos. 
+
+La situación descrita en el presente apartado y el conocimiento de los procesos necesarios para cubrir las necesidades que se formulan, 
+sugieren la creación de una herramienta que recogiendo la información del sistema objetivo por medio de las técnicas disponibles actualmente, 
+represente de la manera mas precisa y estandarizada tanto la arquitectura como los procesos propios del software a estudio.
+Esta representación ha de permitir su posterior adaptación a los paradigmas actuales de manera manual o con la ayuda de herramientas CASE.
+
+\section{Motivación}
+
+La motivación para la realización del presente proyecto surge dentro de una de las reuniones periódicas que realiza el equipo de I+D+I de la empresa Savia\cite{Savia}. 
+Uno de los productos que la empresa desarrolla está escrito utilizando la solución integrada de desarrollo PowerBuilder® y su lenguaje de programación Powerscript®. Esta decisión ha tenido efectos positivos y negativos desde su toma en la década de los 90.
+
+Como parte positiva se puede destacar que el desarrollo permitió la creación rápida de una aplicación visualmente atractiva para el usuario y con una arquitectura preestablecida que evita al desarrollador de la toma de decisiones complejas.
+Por otro lado, también existen diversos puntos negativos derivados de dicha decisión, y entre los que destacan los siguientes:
+\begin{itemize}
+\item Alta acomplación entre las tres capas definidas por el patrón MVC (Modelo Vista Controlador).
+\item Imposibilidad de la creación de sistemas de pruebas que permita proporcionar información objetiva e independiente sobre la calidad del producto.
+\item Capa de servicios muy limitada y compleja.
+\item Excesiva dependencia de un producto propietario costoso y que no se actualiza con la velocidad necesaria.
+\end{itemize}
+
+Además y por la no aplicación de una metodología de desarrollo de software adecuada, el fabricante se enfrenta a problemas como; la no existencia de una documentación precisa que recoja los procesos de negocio y las modificaciones implementadas en el devenir del mantenimiento del software, la utilización de consultas SQL dentro del código fuente de manera no controlada, código fuente repleto de comentarios que ofuscan su comprensión, etc.
+
+Valorado el estado actual del software y las necesidades que se preven en un futuro no lejano, se toma la decisión de establecer un plan de recuperación del conocimiento existente en el producto para usarlo como apoyo dentro del desarrollo de una nueva aplicación que sustituya a la existente en la actualidad.
+
+[Nombre del proyecto] nace como necesidad básica para poder llevar a cabo la recopilación de información del software obsoleto. 
+
+
+\section{Estructura del documento}
+
+Pueden incluirse aquí una sección con algunos consejos para la lectura del
+documento dependiendo de la motivación o conocimientos del lector.  También
+puede ser útil incluir una lista con el nombre y finalidad de cada uno de los
+capítulos restantes.
+
+
+\begin{definitionlist}
+\item[Capítulo \ref{chap:antecedentes}: \nameref{chap:antecedentes}] Explica herramientas
+  y aspectos básicos de edición con \LaTeX.
+\item[Capítulo \ref{chap:objetivos}: \nameref{chap:objetivos}] Finalidad y justificación
+  (con todo detalle) del presente documento.
+\end{definitionlist}
+
